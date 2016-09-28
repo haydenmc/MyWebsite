@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Light-webfont.eot');
+    src: url('fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-ExtraBold-webfont.eot');
+    src: url('fonts/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-ExtraBold-webfont.woff') format('woff'),
+         url('fonts/OpenSans-ExtraBold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-ExtraBold-webfont.svg#open_sansextrabold') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+body {
+    background-color: #1e1e1e;
+}
+
+div.container {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+    div.container div.sidebar {
+        display: flex;
+        flex-direction: column;
+        padding-right: 8px;
+    }
+
+        div.container div.sidebar div.profile {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+
+            div.container div.sidebar div.profile div.name {
+                font-family: "Open Sans";
+                font-weight: 900;
+                font-size: 48px;
+                line-height: 1;
+                text-transform: uppercase;
+                text-align: right;
+                color: #fff;
+            }
+
+        div.container div.sidebar nav {
+            display: flex;
+            flex-direction: column;
+            margin: 12px 0;
+        }
+            div.container div.sidebar nav a {
+                font-family: "Open Sans";
+                font-weight: 100;
+                font-size: 24px;
+                text-align: right;
+                padding: 12px 0;
+                text-decoration: none;
+                text-transform: lowercase;
+                color: #fff;
+            }
+
+    div.container main {
+        min-height: 480px;
+        flex-grow: 1;
+        background-color: #d9d9d9;
+    }
+
+        div.container main h1 {
+            font-family: "Open Sans";
+            font-weight: 900;
+            font-size: 116px;
+            line-height: 1;
+            color: #1e1e1e;
+            text-transform: uppercase;
+            margin: -12px;
+        }
