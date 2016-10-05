@@ -94,6 +94,10 @@ section {
         align-items: center;
         justify-content: center;
         margin: 0;
+        background-image: url('img/bg.jpg');
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
     }
 
         section.profile div.profileCard {
@@ -143,43 +147,56 @@ section {
             text-decoration: none;
         }
 
-    section.projects div.projects {
-        max-width: 900px;
-        margin: 16px auto;
-        display: flex;
-        flex-direction: row;
-        padding-left: -8px;
+    section.projects {
+        margin-bottom: 48px;
     }
 
-        section.projects div.projects div.project {
-            width: 260px;
-            height: 260px;
-            background-size: cover;
+        section.projects div.projects {
+            max-width: 900px;
+            margin: 48px auto 0 auto;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            margin: 8px;
+            flex-direction: row;
+            padding-left: -8px;
         }
 
-            /* section.projects div.projects div.project div.img {
-                width: 100%;
-                height: 280px;
-            } */
-
-            section.projects div.projects div.project div.name {
-                font-weight: 900;
-                text-transform: uppercase;
-                font-size: 20px;
-                background-color: #000;
+            section.projects div.projects div.project {
+                position: relative;
+                width: 260px;
+                height: 260px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                flex-direction: column;
+                justify-content: flex-end;
+                margin: 0 32px 32px 0;
             }
 
-            section.projects div.projects div.project div.description {
-                background-color: #000;
-            }
+                /* section.projects div.projects div.project div.img {
+                    width: 100%;
+                    height: 280px;
+                } */
+
+                section.projects div.projects div.project div.name {
+                    font-weight: 100;
+                    font-size: 32px;
+                    background-color: #000;
+                }
+
+                section.projects div.projects div.project a {
+                    font-weight: normal;
+                    text-decoration: none;
+                    background-color: #000;
+                }
+
+                section.projects div.projects div.project div.description {
+                    position: absolute;
+                    bottom: 0;
+                    background-color: #000;
+                }
 
     section.work div.employer {
         max-width: 900px;
-        margin: 16px auto;
+        margin: 48px auto;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -225,3 +242,27 @@ section {
             section.work div.employer div.position div.title {
                 font-size: 14px
             }
+        
+        section.work div.employer div.etc {
+            display: flex;
+            flex-direction: column;
+            margin: 16px;
+            min-width: 0px;
+        }
+
+            section.work div.employer div.etc div.position {
+                margin: 2px;
+            }
+
+                section.work div.employer div.etc div.position div.year {
+                    font-size: 16px;
+                }
+
+                section.work div.employer div.etc div.position div.name {
+                    font-size: 12px;
+                }
+
+                section.work div.employer div.etc div.position div.title {
+                    font-size: 10px;
+                    display: none;
+                }
