@@ -174,7 +174,7 @@ section {
             padding-left: -8px;
         }
 
-            section.projects div.projects div.project {
+            section.projects div.projects a.project {
                 position: relative;
                 width: 260px;
                 height: 260px;
@@ -184,6 +184,8 @@ section {
                 flex-direction: column;
                 justify-content: flex-end;
                 margin: 0 32px 32px 0;
+                color: #fff;
+                text-decoration: none;
             }
 
                 /* section.projects div.projects div.project div.img {
@@ -191,19 +193,19 @@ section {
                     height: 280px;
                 } */
 
-                section.projects div.projects div.project div.name {
+                section.projects div.projects a.project div.name {
                     font-weight: 100;
                     font-size: 32px;
                     background-color: #000;
                 }
 
-                section.projects div.projects div.project a {
+                section.projects div.projects a.project div.link {
                     font-weight: normal;
                     text-decoration: none;
                     background-color: #000;
                 }
 
-                section.projects div.projects div.project div.description {
+                section.projects div.projects a.project div.description {
                     position: absolute;
                     bottom: 0;
                     background-color: #000;
