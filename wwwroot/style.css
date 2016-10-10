@@ -11,6 +11,30 @@
 
 @font-face {
     font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('fonts/OpenSans-Semibold-webfont.eot');
+    src: url('fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Open Sans';
     src: url('fonts/OpenSans-ExtraBold-webfont.eot');
     src: url('fonts/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/OpenSans-ExtraBold-webfont.woff') format('woff'),
@@ -20,74 +44,240 @@
     font-style: normal;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
-    background-color: #1e1e1e;
+    font-family: "Open Sans";
+    background-color: #000;
+    color: #fff;
+    margin: 0;
 }
 
-div.container {
-    position: relative;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin: 8px 0;
-    overflow: hidden;
+.accent {
+    /* color: rgb(216, 0, 115); */ /* MAGENTA */
+    color: rgb(27, 161, 226); /* CYAN */
 }
 
-    div.container div.sidebar {
-        display: flex;
-        flex-direction: column;
-        padding-right: 8px;
+.accentBG {
+    background-color: rgb(27, 161, 226); /* CYAN */
+}
+
+section {
+    margin-bottom: 64px;
+}
+
+    section > h1 {
+        font-weight: 900;
+        font-size: 32px;
+        color: #fff;
+        margin: 0;
+        text-transform: uppercase;
+        max-width: 900px;
+        margin: 0 auto;
     }
 
-        div.container div.sidebar div.profile {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            flex-wrap: nowrap;
-            flex-shrink: 0;
-            flex-grow: 0;
-        }
+    section > h2 {
+        font-weight: 600;
+        text-transform: lowercase;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 16px 0;
+    }
 
-            div.container div.sidebar div.profile div.name {
-                font-family: "Open Sans";
-                font-weight: 900;
-                font-size: 48px;
-                line-height: 1;
-                text-transform: uppercase;
-                text-align: right;
-                color: #fff;
-            }
+    section.profile::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('img/bg.jpg');
+        background-size: cover;
+        background-position: 35% 50%;
+        background-repeat: no-repeat;
+        opacity: 0.6;
+        z-index: -10;
+    }
 
-        div.container div.sidebar nav {
+    section.profile {
+        position: relative;
+        width: 100%;
+        height: calc(100% - 74px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        /*background-image: url('img/bg.jpg');
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;*/
+    }
+
+        section.profile div.profileCard {
             display: flex;
             flex-direction: column;
-            margin: 12px 0;
         }
-            div.container div.sidebar nav a {
-                font-family: "Open Sans";
-                font-weight: 100;
-                font-size: 24px;
-                text-align: right;
-                padding: 12px 0;
-                text-decoration: none;
-                text-transform: lowercase;
-                color: #fff;
+
+            section.profile div.profileCard img {
+                width: 160px;
+                height: 160px;
             }
 
-    div.container main {
-        min-height: 480px;
-        flex-grow: 1;
-        background-color: #d9d9d9;
+            section.profile div.profileCard div.information h1 {
+                color: #fff;
+                margin: 0;
+                font-weight: 100;
+                line-height: 1;
+                font-size: 72px;
+            }
+
+        section.profile div.navigation {
+            display: flex;
+            flex-direction: row;
+            margin-left: 5px;
+        }
+        
+            section.profile div.navigation a {
+                color: #fff;
+                font-weight: 100;
+                text-transform: lowercase;
+                text-decoration: none;
+                font-size: 24px;
+                opacity: 0.7;
+                margin-right: 8px;
+            }
+
+    section.me p {
+        margin: 0 0 0 16px;
+        font-weight: 100;
+        font-size: 40px;
+        line-height: 1.5;
+        margin: 0 auto 16px auto;
+        max-width: 900px;
     }
 
-        div.container main h1 {
-            font-family: "Open Sans";
-            font-weight: 900;
-            font-size: 116px;
-            line-height: 1;
-            color: #1e1e1e;
-            text-transform: uppercase;
-            margin: -12px;
+        section.me p a {
+            text-decoration: none;
         }
+
+    section.projects {
+        margin-bottom: 48px;
+    }
+
+        section.projects div.projects {
+            max-width: 900px;
+            margin: 48px auto 0 auto;
+            display: flex;
+            flex-direction: row;
+            padding-left: -8px;
+        }
+
+            section.projects div.projects div.project {
+                position: relative;
+                width: 260px;
+                height: 260px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                flex-direction: column;
+                justify-content: flex-end;
+                margin: 0 32px 32px 0;
+            }
+
+                /* section.projects div.projects div.project div.img {
+                    width: 100%;
+                    height: 280px;
+                } */
+
+                section.projects div.projects div.project div.name {
+                    font-weight: 100;
+                    font-size: 32px;
+                    background-color: #000;
+                }
+
+                section.projects div.projects div.project a {
+                    font-weight: normal;
+                    text-decoration: none;
+                    background-color: #000;
+                }
+
+                section.projects div.projects div.project div.description {
+                    position: absolute;
+                    bottom: 0;
+                    background-color: #000;
+                }
+
+    section.work div.employer {
+        max-width: 900px;
+        margin: 48px auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+        section.work div.employer div.company {
+            margin-right: 32px;
+        }
+
+            section.work div.employer div.company div.logo {
+                width: 128px;
+                height: 128px;
+                background-size: 70%;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+
+            section.work div.employer div.company div.name {
+                font-weight: 600;
+                font-size: 24px;
+                text-align: right;
+            }
+
+            section.work div.employer div.company div.timeframe {
+                text-align: right;
+            }
+
+        section.work div.employer div.position {
+            margin: 16px;
+            min-width: 240px;
+        }
+
+            section.work div.employer div.position div.year {
+                font-weight: 100;
+                font-size: 40px;
+            }
+
+            section.work div.employer div.position div.name {
+                font-weight: 100;
+                font-size: 20px;
+            }
+
+            section.work div.employer div.position div.title {
+                font-size: 14px
+            }
+        
+        section.work div.employer div.etc {
+            display: flex;
+            flex-direction: column;
+            margin: 16px;
+            min-width: 0px;
+        }
+
+            section.work div.employer div.etc div.position {
+                margin: 2px;
+            }
+
+                section.work div.employer div.etc div.position div.year {
+                    font-size: 16px;
+                }
+
+                section.work div.employer div.etc div.position div.name {
+                    font-size: 12px;
+                }
+
+                section.work div.employer div.etc div.position div.title {
+                    font-size: 10px;
+                    display: none;
+                }
